@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+      
+    
+
+      <title></title>
+
+      
+      
+
+      <!-- CSS -->
+      
+      <link rel="stylesheet" href="https://ethans-blog.com/book.css">
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="menu">
+            
+            
+            <nav role="navigation">
+                <ul>
+                    
+                    
+                    
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                                
+                            
+                        
+                            
+                        
+                        
+                        <li >
+                            
+                            <a href="https://ethans-blog.com/blog/">
+                                
+                                My Current Projects
+                            </a>
+                
+                            
+                            
+                                <ul>
+                                    
+                                        <li class="active">
+                                            <a href="https://ethans-blog.com/blog/portfolio-visualizer/">
+                                                
+                                                Stock Portfolio Visualizer
+                                            </a>
+                                        </li>
+                                    
+                                        <li >
+                                            <a href="https://ethans-blog.com/blog/arxiv-dashboard/">
+                                                
+                                                ArXiv Dashboard
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                
+
+                </ul>
+            </nav>
+            
+            
+        </div>
+
+        <div class="page">
+            <div class="page__header">
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+            </div>
+
+            <div class="page__content">
+                
+                <div class="book-content">
+                    
+    <h1>Stock Portfolio Visualizer</h1>
+    <h2 id="overview">Overview</h2>
+<p>I’ve been interested in investing since I was a kid. After winning a math competition in 2017, I wanted to manage my winnings wisely and decided to go with a proffesional to invest most of it. Unfortunately, the professional service I used charged high fees and consistently underperformed the market.</p>
+<p>In 2020, right before COVID hit, I decided to take control of my investments and started managing them myself at 15. Since then, I’ve continued to invest, keeping a “safe” portfolio of VTI (total market index) alongside a self-managed growth portfolio.</p>
+<p>Over time, I became frustrated with how limited most portfolio tools are, especially when it comes to backtesting. Most of the good ones are locked behind paywalls and I would much rather invest that money.</p>
+<p>This project is my <strong>in-progress</strong> attempt to build what I wished existed: a clean, customizable tool for backtesting different portfolio strategies and viewing useful performance metrics.</p>
+<h2 id="current-deployment">Current Deployment</h2>
+<p><a href="https://github.com/Calculator5329/stock-site"><strong>Source Code</strong></a> • <a href="https://cheery-tiramisu-028ceb.netlify.app/"><strong>Live Demo</strong></a></p>
+<ul>
+<li>The backend is a Dockerized FastAPI app, deployed as an Azure App Service.</li>
+<li>The frontend is built with Next.js (great for future features like login, saved portfolios, and SSR) and hosted on Netlify</li>
+<li>Switched from CSVs to Pickle files, mostly for the superior name, but also for the much faster load times.</li>
+<li>Used yfinance to get historical data, limited to S&amp;P500 companies.</li>
+</ul>
+<h2 id="what-s-next">What's Next</h2>
+<ul>
+<li>Expand support to include bonds, mutual funds, and ETFs.</li>
+<li>Add stocks not included in the S&amp;P 500</li>
+<li>Monte Carlo Simulations</li>
+<li>Discounted Cash Flow tool</li>
+<li>Login &amp; Saved portfolio tracking</li>
+<li>Stock screener with fine-tuned LLM</li>
+<li>Individual stock financials breakdown (An absurd amount of data)</li>
+</ul>
+<h2 id="what-i-learned">What I Learned</h2>
+<ul>
+<li>Optimization techniques for rendering graphs and dynamic content in Next.js (hint: don't re-render complex graphs every time the page state updates)</li>
+<li>Frontend design basics (layout, textures, gradients, and visualizing data with graphs)</li>
+<li>Pickle files are the best (At least 10x more efficent than my csv files)</li>
+<li>Using yfinance works, but it's so picky it's often better to just download the data manually</li>
+</ul>
+
+
+                </div>
+            </div>
+
+            <div class="prev-link">
+                
+    
+        
+        
+        <a class="previous" href="https://ethans-blog.com/blog/"><</a>
+    
+
+            </div>
+
+            <div class="next-link">
+                
+    
+        
+        
+        
+        
+            
+            
+            
+                
+                    
+                
+            
+                
+            
+        
+    
+
+            </div>
+        </div>
+
+        
+            
+            <script type="text/javascript" src="https://ethans-blog.com/book.js"></script>
+        
+    </body>
+
+</html>
