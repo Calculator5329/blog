@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+      
+    
+
+      <title></title>
+
+      
+      
+
+      <!-- CSS -->
+      
+      <link rel="stylesheet" href="https://calculator5329.github.io/blog/book.css">
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="menu">
+            
+            
+            <nav role="navigation">
+                <ul>
+                    
+                    
+                    
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                                
+                            
+                        
+                            
+                        
+                        
+                        <li >
+                            
+                            <a href="https://calculator5329.github.io/blog/projects/">
+                                
+                                My Current Projects
+                            </a>
+                
+                            
+                            
+                                <ul>
+                                    
+                                        <li class="active">
+                                            <a href="https://calculator5329.github.io/blog/projects/arxiv-dashboard/">
+                                                
+                                                ArXiv Dashboard
+                                            </a>
+                                        </li>
+                                    
+                                        <li >
+                                            <a href="https://calculator5329.github.io/blog/projects/portfolio-visualizer/">
+                                                
+                                                Stock Portfolio Visualizer
+                                            </a>
+                                        </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                    
+                
+
+                </ul>
+            </nav>
+            
+            
+        </div>
+
+        <div class="page">
+            <div class="page__header">
+                <div class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+            </div>
+
+            <div class="page__content">
+                
+                <div class="book-content">
+                    
+    <h1>ArXiv Dashboard</h1>
+    <h2 id="overview">Overview</h2>
+<p>I created this project to explore a better way of staying up to date with AI/ML arXiv papers. I wanted a system that could automatically rank and fetch top research papers, generate high-quality summaries using an LLM, and let me ask questions about the content I didn’t fully understand. It was also a great excuse to experiment with Retrieval-Augmented Generation and make my own chatbot interface.</p>
+<h2 id="current-deployment">Current Deployment</h2>
+<p><a href="https://github.com/Calculator5329/ai-papers"><strong>Source Code</strong></a> • <a href="https://calculator5329.github.io/ai-papers/"><strong>Live Demo</strong></a></p>
+<ul>
+<li>The backend is built with <strong>FastAPI</strong> and deployed on a <strong>Raspberry Pi</strong> using a persistent <strong>Cloudflare Tunnel</strong>.</li>
+<li>The frontend is a simple <strong>React</strong> interface, hosted on Github Pages.</li>
+</ul>
+<hr />
+<h2 id="first-try-google-cloud-run-sqlite">First Try: Google Cloud Run + SQLite</h2>
+<p>I initially deployed the app on <strong>Google Cloud Run</strong>, aiming to keep things simple by bundling a local SQLite database with the container. The backend used FastAPI, and Google Cloud Scheduler was set up to regularly trigger the data ingestion route for new arXiv papers. Summarization and Q&amp;A were powered by the Gemini API.</p>
+<p>The idea was that the scheduler would update the database on a daily basis within the Cloud Run. But since Cloud Run containers are ephemeral, each deployment or scale-up spins up a fresh container instance based on the original image. So while the scheduler ran and appeared to write to the database, those changes were lost the moment the container restarted or scaled down.</p>
+<p>To make things worse, I had Cloud Run configured as fully serverless (anything else is prohibitively expensive), meaning it would automatically scale to zero instances when idle, effectivelly rendering my database updates obselete. I considered switching to Cloud SQL (PostgreSQL) to fix the persistence problem, but the pricing was way too high for just a personal project.</p>
+<hr />
+<h2 id="plan-b-raspberry-pi-sqlite-cron-cloudflare">Plan B: Raspberry Pi + SQLite + Cron + Cloudflare</h2>
+<p>After running into limitations with Cloud Run, I moved the entire project off the cloud and onto a Raspberry Pi Zero 2 W. It’s lightweight, always-on, and completely under my control — perfect for a project like this.</p>
+<p>I set up a cron job on the Pi to periodically fetch new arXiv papers, generate embeddings, and update a local SQLite database. Instead of using a paid cloud database or exposing the Pi directly to the internet, I configured a persistent Cloudflare Tunnel with a custom domain, allowing the app to be securely accessed from anywhere.</p>
+<hr />
+<h2 id="what-s-next">What’s Next</h2>
+<ul>
+<li>Let users submit their own PDFs to read summaries and chat with them</li>
+<li>Add options for papers from other fields</li>
+</ul>
+<hr />
+<h2 id="what-i-learned">What I learned</h2>
+<ul>
+<li>Implemented Retrieval-Augmented Generation for the first time!</li>
+<li>Prompt engineering and formatting LLM output in markdown</li>
+<li>Learned how to use the arXiv API (its suprisingly easy)</li>
+<li>Set up a Raspberry Pi for self-hosting and configured everything over SSH</li>
+<li>Google Cloud SQL has insane pricing</li>
+</ul>
+
+
+                </div>
+            </div>
+
+            <div class="prev-link">
+                
+    
+        
+        
+        <a class="previous" href="https://calculator5329.github.io/blog/projects/"><</a>
+    
+
+            </div>
+
+            <div class="next-link">
+                
+    
+        
+        
+        
+        
+            
+            
+            
+                
+                    
+                
+            
+                
+            
+        
+    
+
+            </div>
+        </div>
+
+        
+            
+            <script type="text/javascript" src="https://calculator5329.github.io/blog/book.js"></script>
+        
+    </body>
+
+</html>
