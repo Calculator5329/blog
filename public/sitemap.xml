@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://ethans-blog.com/</loc>
+    </url>
+    <url>
+        <loc>https://ethans-blog.com/blog/</loc>
+    </url>
+    <url>
+        <loc>https://ethans-blog.com/blog/arxiv-dashboard/</loc>
+        <lastmod>2025-03-30</lastmod>
+    </url>
+    <url>
+        <loc>https://ethans-blog.com/blog/portfolio-visualizer/</loc>
+        <lastmod>2025-03-28</lastmod>
+    </url>
+</urlset>
