@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: https://ethans-blog.com/sitemap.xml
+Sitemap: https://calculator5329.github.io/blog/sitemap.xml

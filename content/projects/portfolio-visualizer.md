@@ -22,10 +22,17 @@ This project is my **in-progress** attempt to build what I wished existed: a cle
 - Switched from CSVs to Pickle files, mostly for the superior name, but also for the much faster load times.
 - Used yfinance to get historical data, limited to S&P500 companies.
 
+## Update 04/09/2025
+
+- Expanded support to include all US companies with a market cap greather than 10B
+- Expanded support for the top 100 ETFs in the US Market
+- Added underlying performance to main chart
+- Added second chart for individual stock performance and metrics
+
 ## What's Next
 
-- Expand support to include bonds, mutual funds, and ETFs.
-- Add stocks not included in the S&P 500
+- Expand support to include ETFs ✔️
+- Add stocks not included in the S&P 500 ✔️
 - Monte Carlo Simulations
 - Discounted Cash Flow tool
 - Login & Saved portfolio tracking
